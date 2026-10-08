@@ -10,5 +10,5 @@ public interface IMostrar_datos
 
     
 public interface IMembresiaFactory{ 
-    public Membresias CrearMembresia(); 
+    public Membresias CrearMembresia(Clientes cliente); 
 }
