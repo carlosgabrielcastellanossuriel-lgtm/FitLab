@@ -1,4 +1,7 @@
-﻿namespace Proyecto_FITLAB;
+﻿using FitLab.Core.Enums; // Para usar Rol
+using FitLab.Core.Interfaces; // Para usar IIdentificador e IMostrar_datos
+
+namespace FitLab.Core.Entidades;
 public abstract class Clientes : IIdentificador, IMostrar_datos
 {
     public string? nombre { get; private set; }

@@ -1,4 +1,4 @@
-﻿namespace Proyecto_FITLAB;
+﻿namespace FitLab.Core.Excepciones;
 
 public class ID_no_encontrado_exception : Exception // hereda de la clase exception la cual es la clase por defecto de c# para las excepciones
 {

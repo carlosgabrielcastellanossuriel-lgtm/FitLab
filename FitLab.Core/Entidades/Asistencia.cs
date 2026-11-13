@@ -1,4 +1,4 @@
-﻿namespace Proyecto_FITLAB.Models;
+﻿namespace FitLab.Core.Entidades;
 
 public class Asistencia
 {

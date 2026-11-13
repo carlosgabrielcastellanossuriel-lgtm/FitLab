@@ -1,4 +1,4 @@
-﻿namespace Proyecto_FITLAB;
+﻿namespace FitLab.Core.Enums;
 
 public enum TipoClientes
 {

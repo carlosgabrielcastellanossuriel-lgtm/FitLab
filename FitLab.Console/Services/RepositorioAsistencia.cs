@@ -1,6 +1,4 @@
-﻿using Proyecto_FITLAB.Models;
-
-namespace Proyecto_FITLAB;// [ai-assisted]
+﻿namespace Proyecto_FITLAB;// [ai-assisted]
 
 internal class RepositorioAsistencia
 {

@@ -1,4 +1,6 @@
-﻿namespace Proyecto_FITLAB;
+﻿using FitLab.Core.Interfaces; // Para usar IIdentificador e IMostrar_datos
+
+namespace FitLab.Core.Entidades;
 
 public class Pagos : IIdentificador, IMostrar_datos
 {

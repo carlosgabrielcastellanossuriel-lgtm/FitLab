@@ -1,6 +1,4 @@
-﻿using Proyecto_FITLAB.Models;
-
-namespace Proyecto_FITLAB; // [ai-assisted]
+﻿namespace Proyecto_FITLAB; // [ai-assisted]
 public class GestorAsistencia
 {
     private static GestorAsistencia _instancia;

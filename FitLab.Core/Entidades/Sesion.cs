@@ -1,4 +1,6 @@
-﻿namespace Proyecto_FITLAB;
+﻿using FitLab.Core.Enums; // Para usar Rol
+
+namespace FitLab.Core.Entidades;
 public class Sesion 
 {
     public string? Nombre { get; }

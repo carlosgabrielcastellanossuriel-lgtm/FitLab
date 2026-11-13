@@ -1,5 +1,4 @@
 ﻿using Proyecto_FITLAB;
-using Proyecto_FITLAB.Models;
 
 int opc = 0;
 

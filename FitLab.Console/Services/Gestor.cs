@@ -1,5 +1,4 @@
-﻿using Proyecto_FITLAB.Models;
-using Proyecto_FITLAB.Services;
+﻿using Proyecto_FITLAB.Services;
 
 namespace Proyecto_FITLAB; // [ai-assisted]
 
