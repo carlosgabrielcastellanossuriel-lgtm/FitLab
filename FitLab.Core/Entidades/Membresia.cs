@@ -1,5 +1,5 @@
 ﻿using FitLab.Core.Enums; // Para usar TipoMembresia
-using FitLab.Core.Interfaces; // Para usar IIdentificador e IMostrar_datos
+using FitLab.Core.Interfaces; // Para usar IIdentificador
 
 namespace FitLab.Core.Entidades;
 // [ai-assisted]
@@ -10,7 +10,7 @@ public enum Estado_membresia{
     Cancelada
 };
 
-public class Membresia : IIdentificador, IMostrar_datos
+public class Membresia : IIdentificador
 {
     public TipoMembresia Tipo { get; }
 
@@ -75,13 +75,6 @@ public class Membresia : IIdentificador, IMostrar_datos
     public void Cambiar_estado(Estado_membresia nuevo_estado)
     {
         Estado = nuevo_estado;
-    }
-
-    public void Mostrar_datos()
-    {
-        Console.WriteLine($@"ID membresia: {ID}
-Estado: {Estado}
-Fecha de creacion: {fecha_creacion.ToShortDateString()}");
     }
 
     public void Actualizar_fecha_vencimiento(DateTime fecha_actualizada)

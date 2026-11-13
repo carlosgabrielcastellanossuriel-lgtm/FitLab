@@ -1,9 +1,9 @@
 ﻿using FitLab.Core.Enums; // Para usar Rol y TipoCliente
-using FitLab.Core.Interfaces; // Para usar IIdentificador e IMostrar_datos
+using FitLab.Core.Interfaces; // Para usar IIdentificador
 
 namespace FitLab.Core.Entidades;
 
-public class Cliente : IIdentificador, IMostrar_datos
+public class Cliente : IIdentificador
 {
     public TipoCliente Tipo { get; }
     public string? nombre { get; private set; }
@@ -52,12 +52,5 @@ public class Cliente : IIdentificador, IMostrar_datos
     public void anotar_asistencia()
     {
         Asistencia.Add(DateTime.Now);
-    }
-
-    public void Mostrar_datos()
-    {
-        Console.WriteLine($@"Nombre: {nombre}
-Edad: {edad}
-ID: {ID}");
     }
 }

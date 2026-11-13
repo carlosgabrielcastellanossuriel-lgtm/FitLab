@@ -1,8 +1,8 @@
-﻿using FitLab.Core.Interfaces; // Para usar IIdentificador e IMostrar_datos
+﻿using FitLab.Core.Interfaces; // Para usar IIdentificador
 
 namespace FitLab.Core.Entidades;
 
-public class Pago : IIdentificador, IMostrar_datos
+public class Pago : IIdentificador
 {
     static int proximo_ID = 1;
     public Membresia membresia { get; private set;}
@@ -26,12 +26,5 @@ public class Pago : IIdentificador, IMostrar_datos
         if (membresia.Estado != Estado_membresia.Activo) membresia.Cambiar_estado(Estado_membresia.Activo); // La membresia estara activa solo cuando se pague 
 
         membresia.Renovar_membresia();
-    }
-
-    public void Mostrar_datos()
-    {
-        Console.WriteLine(@$"ID pago: {ID}
-Monto pagado: ${monto_pagado}
-Fecha: {Fecha}");
     }
 }
