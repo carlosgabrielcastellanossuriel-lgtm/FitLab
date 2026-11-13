@@ -1,8 +1,8 @@
-﻿namespace Proyecto_FITLAB; // [ai-assisted]
+﻿namespace FitLab.Negocio; // [ai-assisted]
 public class GestorClientes
 {
     private static GestorClientes _instancia;
-    private List<Clientes> _listaClientes = new List<Clientes>();
+    private List<Cliente> _listaClientes = new List<Cliente>();
 
     private GestorClientes(){}
 
@@ -19,26 +19,26 @@ public class GestorClientes
     // METOODOS
     //*********
 
-    public Clientes RegistrarCliente(TipoClientes tipoCliente, string nombre, Rol rol, int edad)
+    public Cliente RegistrarCliente(TipoCliente tipoCliente, string nombre, Rol rol, int edad)
     {
-        Clientes cliente = ClientesFactory.CrearClientes(tipoCliente, nombre, rol, edad);
+        Cliente cliente = new Cliente(tipoCliente, nombre, rol, edad);
 
         _listaClientes.Add(cliente);
 
         return cliente;
     }
 
-    public Clientes ClienteExiste(int id)
+    public Cliente ClienteExiste(int id)
     {
-        Clientes cliente = _listaClientes.Find(cliente => cliente.ID == id);
+        Cliente cliente = _listaClientes.Find(cliente => cliente.ID == id);
 
         if (cliente == null) throw new ID_no_encontrado_exception("Cliente no encontrado");
 
         return cliente;
     }
 
-    public List<Clientes> ClientesRegistrados()
+    public List<Cliente> ClientesRegistrados()
     {
-        return new List<Clientes>(_listaClientes);
+        return new List<Cliente>(_listaClientes);
     }
 }

@@ -1,7 +1,4 @@
-﻿using Proyecto_FITLAB;
-using Proyecto_FITLAB.Models;
-
-int opc = 0;
+﻿int opc = 0;
 
 Console.WriteLine("============ BIENVENIDO A FITLAB ============");
 do
@@ -33,12 +30,12 @@ do
                         "2. Estudiante\n" +
                         "3. Premium\n");
                                                        
-                    TipoClientes tipoCliente = Convert.ToInt32(Console.ReadLine()) switch
+                    TipoCliente tipoCliente = Convert.ToInt32(Console.ReadLine()) switch
                     {
                     
-                        1 => TipoClientes.Regular,
-                        2 => TipoClientes.Estudiante,
-                        3 => TipoClientes.Premium,
+                        1 => TipoCliente.Regular,
+                        2 => TipoCliente.Estudiante,
+                        3 => TipoCliente.Premium,
                         _ => throw new Exception("Opcion invalida!")
                     };
                     
@@ -80,7 +77,7 @@ do
                 {
                     Console.WriteLine("Digite su ID: "); int id = Convert.ToInt32(Console.ReadLine());
                                    
-                    Membresias membresia = Gestor.ExisteMembresia(id);
+                    Membresia membresia = Gestor.ExisteMembresia(id);
 
                     Console.WriteLine($"Monto a pagar: {membresia.tarifa}\nDesea confirmar el pago? (Presione 1 para confirmar...)"); int confirmar = Convert.ToInt32(Console.ReadLine());
 
@@ -138,7 +135,7 @@ do
 
             case 6:
                 {
-                    List<Membresias> ListaMembresiasActivas = Gestor.MembresiasActivas(); 
+                    List<Membresia> ListaMembresiasActivas = Gestor.MembresiasActivas(); 
                     
                     if(ListaMembresiasActivas.Count == 0) Console.WriteLine("No hay membresias activas por el momento.");
 
@@ -146,7 +143,7 @@ do
                     {
                         Console.WriteLine("************** MEMBRESIAS ACTIVAS **************");
 
-                        foreach (Membresias m in ListaMembresiasActivas)
+                        foreach (Membresia m in ListaMembresiasActivas)
                         {
                             Console.WriteLine($"Propietario: {m.Propietario.nombre} || Membresia ID: {m.ID}");
                         }
@@ -156,7 +153,7 @@ do
 
             case 7:
                 {
-                    List<Clientes> ListaClientesRegistrados = Gestor.ClientesRegistrados();
+                    List<Cliente> ListaClientesRegistrados = Gestor.ClientesRegistrados();
 
                     if (ListaClientesRegistrados.Count == 0) Console.WriteLine("No hay clientes registrados por el momento.");
 
@@ -164,7 +161,7 @@ do
                     {
                         Console.WriteLine("************** CLIENTES **************");
 
-                        foreach (Clientes c in ListaClientesRegistrados)
+                        foreach (Cliente c in ListaClientesRegistrados)
                         {
                             Console.WriteLine($"Nombre: {c.nombre} || ID: {c.ID} || Membresia ID: {c.Membresia_cliente.ID} || Estado membresia: {c.Membresia_cliente.Estado}");
                         }
@@ -221,7 +218,7 @@ do
 
                     Console.WriteLine("Digite el mes buscado: "); int mes = Convert.ToInt32(Console.ReadLine());
 
-                    double ingresos = Gestor.Ingresos_mes(anio, mes); 
+                    decimal ingresos = Gestor.Ingresos_mes(anio, mes); 
 
                     Console.WriteLine($"Ingresos: ${ingresos}"); break;
                 }
