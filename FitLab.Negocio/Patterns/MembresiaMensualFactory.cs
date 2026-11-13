@@ -2,7 +2,7 @@
 
 internal class MembresiaMensualFactory : IMembresiaFactory
 {
-    public Membresias CrearMembresia(Clientes cliente)
+    public Membresias CrearMembresia(Cliente cliente)
     {
         return new Membresia_mensual(cliente);
     }

@@ -30,12 +30,12 @@ do
                         "2. Estudiante\n" +
                         "3. Premium\n");
                                                        
-                    TipoClientes tipoCliente = Convert.ToInt32(Console.ReadLine()) switch
+                    TipoCliente tipoCliente = Convert.ToInt32(Console.ReadLine()) switch
                     {
                     
-                        1 => TipoClientes.Regular,
-                        2 => TipoClientes.Estudiante,
-                        3 => TipoClientes.Premium,
+                        1 => TipoCliente.Regular,
+                        2 => TipoCliente.Estudiante,
+                        3 => TipoCliente.Premium,
                         _ => throw new Exception("Opcion invalida!")
                     };
                     
@@ -153,7 +153,7 @@ do
 
             case 7:
                 {
-                    List<Clientes> ListaClientesRegistrados = Gestor.ClientesRegistrados();
+                    List<Cliente> ListaClientesRegistrados = Gestor.ClientesRegistrados();
 
                     if (ListaClientesRegistrados.Count == 0) Console.WriteLine("No hay clientes registrados por el momento.");
 
@@ -161,7 +161,7 @@ do
                     {
                         Console.WriteLine("************** CLIENTES **************");
 
-                        foreach (Clientes c in ListaClientesRegistrados)
+                        foreach (Cliente c in ListaClientesRegistrados)
                         {
                             Console.WriteLine($"Nombre: {c.nombre} || ID: {c.ID} || Membresia ID: {c.Membresia_cliente.ID} || Estado membresia: {c.Membresia_cliente.Estado}");
                         }

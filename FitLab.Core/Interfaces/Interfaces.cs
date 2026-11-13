@@ -1,4 +1,4 @@
-﻿using FitLab.Core.Entidades; // Para usar Membresias y Clientes
+﻿using FitLab.Core.Entidades; // Para usar Membresias y Cliente
 
 namespace FitLab.Core.Interfaces;
 public interface IIdentificador{
@@ -12,5 +12,5 @@ public interface IMostrar_datos
 
     
 public interface IMembresiaFactory{ 
-    public Membresias CrearMembresia(Clientes cliente); 
+    public Membresias CrearMembresia(Cliente cliente); 
 }

@@ -15,7 +15,7 @@ internal class GestorMembresia
             return _instancia;
         }
     }
-    public Membresias GenerarMembresia(TipoMembresia tipo, Clientes cliente) // Crear una clase factory que haga esto
+    public Membresias GenerarMembresia(TipoMembresia tipo, Cliente cliente) // Crear una clase factory que haga esto
     {
         Membresias membresia = MembresiasFactory.CrearMembresia(tipo , cliente);
 

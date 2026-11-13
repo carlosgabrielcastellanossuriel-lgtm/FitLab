@@ -1,16 +1,33 @@
-﻿using FitLab.Core.Enums; // Para usar Rol
+﻿using FitLab.Core.Enums; // Para usar Rol y TipoCliente
 using FitLab.Core.Interfaces; // Para usar IIdentificador e IMostrar_datos
 
 namespace FitLab.Core.Entidades;
-public abstract class Clientes : IIdentificador, IMostrar_datos
+
+public class Cliente : IIdentificador, IMostrar_datos
 {
+    public TipoCliente Tipo { get; }
     public string? nombre { get; private set; }
     public int edad { get; private set; }
     public Rol rol { get; private set; }
 
     static int proximo_id = 1;
     public int ID { get; private set; }
-    virtual public double descuento { get; protected set; }
+
+    // El descuento ya no se guarda: se calcula según el tipo del cliente
+    public double descuento
+    {
+        get
+        {
+            switch (Tipo)
+            {
+                case TipoCliente.Regular: return 0;
+                case TipoCliente.Estudiante: return 0.15;
+                case TipoCliente.Premium: return -0.25;
+                default: return 0;
+            }
+        }
+    }
+
     public Membresias? Membresia_cliente { get; private set; } //  Aca estara el objeto completo de la membresia que haya escogido este cliente
     public List<DateTime> Asistencia { get; private set; } = new List<DateTime>();
 
@@ -18,13 +35,13 @@ public abstract class Clientes : IIdentificador, IMostrar_datos
     //**************
     // CONSTRUCTOR
     //**************
-    public Clientes(string nombre, Rol rol, int edad)
+    public Cliente(TipoCliente tipo, string nombre, Rol rol, int edad)
     {
+        Tipo = tipo;
         this.nombre = nombre;
         this.rol = rol;
         this.edad = edad;
         ID = proximo_id++;
-        descuento = 0;
     }
 
     public void asignar_membresia(Membresias membresia)
@@ -42,36 +59,5 @@ public abstract class Clientes : IIdentificador, IMostrar_datos
         Console.WriteLine($@"Nombre: {nombre}
 Edad: {edad}
 ID: {ID}");
-    }
-}
-
-public class Regulares : Clientes
-{
-    override public double descuento { get; protected set; }
-
-    public Regulares(string nombre, Rol rol, int edad) : base(nombre, rol, edad)
-    {
-        descuento = 0;
-    }
-}
-
-public class Estudiantes : Clientes
-{
-
-    override public double descuento { get; protected set; }
-    public Estudiantes(string nombre, Rol rol, int edad) : base(nombre, rol, edad)// base le pasa los argumentos que necesita el constructor padre
-    {
-        descuento = 0.15;
-    }
-}
-
-public class Premium : Clientes
-{
-
-    override public double descuento { get; protected set; }
-
-    public Premium(string nombre, Rol rol, int edad) : base(nombre, rol, edad)
-    {
-        descuento = -0.25;
     }
 }

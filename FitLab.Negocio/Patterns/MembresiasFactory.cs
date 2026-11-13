@@ -2,7 +2,7 @@
 
 internal static class MembresiasFactory 
 {
-    public static Membresias CrearMembresia(TipoMembresia tipo, Clientes cliente)
+    public static Membresias CrearMembresia(TipoMembresia tipo, Cliente cliente)
     {
         switch (tipo)
         {

@@ -1,6 +1,6 @@
 ﻿namespace FitLab.Core.Enums;
 
-public enum TipoClientes
+public enum TipoCliente
 {
     Regular,
     Estudiante,

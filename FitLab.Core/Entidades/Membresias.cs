@@ -20,12 +20,12 @@ abstract public class Membresias : IIdentificador, IMostrar_datos// las clases h
     public DateTime fecha_creacion { get; private set; }
     public Estado_membresia Estado { get; private set; }
     public double descuento { get; private set;}
-    public Clientes Propietario { get; private set; }
+    public Cliente Propietario { get; private set; }
 
     //**************
     // CONSTRUCTOR
     //**************
-    protected Membresias(Clientes cliente) // protected permite que se herede el constructor pero que no se pueda inicializar desde afuera
+    protected Membresias(Cliente cliente) // protected permite que se herede el constructor pero que no se pueda inicializar desde afuera
     {
         ID = proximo_ID++;
 
@@ -72,7 +72,7 @@ public class Membresia_mensual : Membresias
     //*************
     // CONSTRUCTOR
     //*************
-    public Membresia_mensual(Clientes cliente) : base (cliente)
+    public Membresia_mensual(Cliente cliente) : base (cliente)
     {
         fecha_vencimiento = fecha_inicio.AddMonths(1);
     }
@@ -91,7 +91,7 @@ public class Membresia_trimestral: Membresias
     //**************
     // CONSTRUCTOR
     //**************
-    public Membresia_trimestral(Clientes cliente) : base (cliente)
+    public Membresia_trimestral(Cliente cliente) : base (cliente)
     {
         fecha_vencimiento = fecha_inicio.AddMonths(3);
     }
@@ -111,7 +111,7 @@ public class Membresia_anual : Membresias
     //**************
     // CONSTRUCTOR
     //**************
-    public Membresia_anual(Clientes cliente) : base(cliente)
+    public Membresia_anual(Cliente cliente) : base(cliente)
     {
         fecha_vencimiento = fecha_inicio.AddYears(1);
     }

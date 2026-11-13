@@ -9,9 +9,9 @@ public static class Gestor
     //***********
 
     // OPCION 1
-    public static int Registrar_cliente(TipoClientes tipoCliente, TipoMembresia tipoMembresia, string nombre, Rol rol, int edad)
+    public static int Registrar_cliente(TipoCliente tipoCliente, TipoMembresia tipoMembresia, string nombre, Rol rol, int edad)
     {
-        Clientes cliente = GestorClientes.Instancia.RegistrarCliente(tipoCliente, nombre, rol, edad);
+        Cliente cliente = GestorClientes.Instancia.RegistrarCliente(tipoCliente, nombre, rol, edad);
 
         Membresias membresia = GestorMembresia.Instancia.GenerarMembresia(tipoMembresia, cliente); Logger.Instancia.RegistrarEvento($"NUEVO CLIENTE: {nombre} con membresia {tipoMembresia} y ID: {membresia.ID}.");
 
@@ -33,7 +33,7 @@ public static class Gestor
     // OPCION 3
     public static string Registrar_asistencia(int id)
     {
-        Clientes cliente = GestorClientes.Instancia.ClienteExiste(id);// Si el cliente no existe lanzara la excepcion de id no encontrado antes de tratar de buscarlo en una asistencia
+        Cliente cliente = GestorClientes.Instancia.ClienteExiste(id);// Si el cliente no existe lanzara la excepcion de id no encontrado antes de tratar de buscarlo en una asistencia
 
         GestorAsistencia.Instancia.RegistrarAsitencia(id);
 
@@ -65,7 +65,7 @@ public static class Gestor
     }
 
     // OPCION 7
-    public static List<Clientes> ClientesRegistrados()
+    public static List<Cliente> ClientesRegistrados()
     {
         return GestorClientes.Instancia.ClientesRegistrados();
     }
@@ -95,7 +95,7 @@ public static class Gestor
     // OPCION 10
     public static string Cerrar_sesion(int id)
     {
-        Clientes cliente = GestorClientes.Instancia.ClienteExiste(id);
+        Cliente cliente = GestorClientes.Instancia.ClienteExiste(id);
 
         GestorSesion.Instancia.CerrarSesion(cliente.ID);
 
