@@ -20,7 +20,7 @@ internal class GestorPagos
     // METOODOS
     //*********
 
-    public Pagos CrearPago(Membresias membresia)
+    public Pagos CrearPago(Membresia membresia)
     {
         Pagos pago = new Pagos(membresia);
 

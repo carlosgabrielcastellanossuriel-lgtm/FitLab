@@ -4,7 +4,7 @@ namespace FitLab.Negocio; // [ai-assisted]
 internal class GestorMembresia 
 {
     private static GestorMembresia _instancia;
-    private List<Membresias>_listaMembresias = new();
+    private List<Membresia>_listaMembresias = new();
     private GestorMembresia(){}
 
     public static GestorMembresia Instancia
@@ -15,9 +15,9 @@ internal class GestorMembresia
             return _instancia;
         }
     }
-    public Membresias GenerarMembresia(TipoMembresia tipo, Cliente cliente) // Crear una clase factory que haga esto
+    public Membresia GenerarMembresia(TipoMembresia tipo, Cliente cliente)
     {
-        Membresias membresia = MembresiasFactory.CrearMembresia(tipo , cliente);
+        Membresia membresia = new Membresia(tipo, cliente);
 
         _listaMembresias.Add(membresia);
         cliente.asignar_membresia(membresia);
@@ -25,18 +25,18 @@ internal class GestorMembresia
         return membresia;
     }
 
-    public Membresias ExisteMembresia(int id)
+    public Membresia ExisteMembresia(int id)
     {
-        Membresias membresia = _listaMembresias.Find(m => m.ID == id);
+        Membresia membresia = _listaMembresias.Find(m => m.ID == id);
 
         if (membresia == null) throw new ID_no_encontrado_exception("Membresia no encontrada");
 
         return membresia;
     }
 
-    public List<Membresias> MembresiasActivas()
+    public List<Membresia> MembresiasActivas()
     {
-        List<Membresias> ListaMembresiasActivas = _listaMembresias.FindAll(m => m.Estado == Estado_membresia.Activo).ToList();
+        List<Membresia> ListaMembresiasActivas = _listaMembresias.FindAll(m => m.Estado == Estado_membresia.Activo).ToList();
 
         return ListaMembresiasActivas;
     }

@@ -5,7 +5,7 @@ namespace FitLab.Core.Entidades;
 public class Pagos : IIdentificador, IMostrar_datos
 {
     static int proximo_ID = 1;
-    public Membresias membresia { get; private set;}
+    public Membresia membresia { get; private set;}
     public int ID { get; private set; }
     public DateTime Fecha { get; private set;}
     public double monto_pagado { get; private set;}
@@ -13,7 +13,7 @@ public class Pagos : IIdentificador, IMostrar_datos
     //**************
     // CONSTRUCTOR
     //**************
-    public Pagos(Membresias membresia)
+    public Pagos(Membresia membresia)
     {
         this.membresia = membresia;
 

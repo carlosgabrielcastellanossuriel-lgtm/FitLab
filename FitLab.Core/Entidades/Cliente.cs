@@ -28,7 +28,7 @@ public class Cliente : IIdentificador, IMostrar_datos
         }
     }
 
-    public Membresias? Membresia_cliente { get; private set; } //  Aca estara el objeto completo de la membresia que haya escogido este cliente
+    public Membresia? Membresia_cliente { get; private set; } //  Aca estara el objeto completo de la membresia que haya escogido este cliente
     public List<DateTime> Asistencia { get; private set; } = new List<DateTime>();
 
 
@@ -44,7 +44,7 @@ public class Cliente : IIdentificador, IMostrar_datos
         ID = proximo_id++;
     }
 
-    public void asignar_membresia(Membresias membresia)
+    public void asignar_membresia(Membresia membresia)
     {
         Membresia_cliente = membresia;
     }

@@ -77,7 +77,7 @@ do
                 {
                     Console.WriteLine("Digite su ID: "); int id = Convert.ToInt32(Console.ReadLine());
                                    
-                    Membresias membresia = Gestor.ExisteMembresia(id);
+                    Membresia membresia = Gestor.ExisteMembresia(id);
 
                     Console.WriteLine($"Monto a pagar: {membresia.tarifa}\nDesea confirmar el pago? (Presione 1 para confirmar...)"); int confirmar = Convert.ToInt32(Console.ReadLine());
 
@@ -135,7 +135,7 @@ do
 
             case 6:
                 {
-                    List<Membresias> ListaMembresiasActivas = Gestor.MembresiasActivas(); 
+                    List<Membresia> ListaMembresiasActivas = Gestor.MembresiasActivas(); 
                     
                     if(ListaMembresiasActivas.Count == 0) Console.WriteLine("No hay membresias activas por el momento.");
 
@@ -143,7 +143,7 @@ do
                     {
                         Console.WriteLine("************** MEMBRESIAS ACTIVAS **************");
 
-                        foreach (Membresias m in ListaMembresiasActivas)
+                        foreach (Membresia m in ListaMembresiasActivas)
                         {
                             Console.WriteLine($"Propietario: {m.Propietario.nombre} || Membresia ID: {m.ID}");
                         }

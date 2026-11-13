@@ -13,19 +13,19 @@ public static class Gestor
     {
         Cliente cliente = GestorClientes.Instancia.RegistrarCliente(tipoCliente, nombre, rol, edad);
 
-        Membresias membresia = GestorMembresia.Instancia.GenerarMembresia(tipoMembresia, cliente); Logger.Instancia.RegistrarEvento($"NUEVO CLIENTE: {nombre} con membresia {tipoMembresia} y ID: {membresia.ID}.");
+        Membresia membresia = GestorMembresia.Instancia.GenerarMembresia(tipoMembresia, cliente); Logger.Instancia.RegistrarEvento($"NUEVO CLIENTE: {nombre} con membresia {tipoMembresia} y ID: {membresia.ID}.");
 
         return cliente.ID;
     }
 
     // OPCION 2
 
-    public static Membresias ExisteMembresia(int id)
+    public static Membresia ExisteMembresia(int id)
     {
         return GestorMembresia.Instancia.ExisteMembresia(id);
     }
 
-    public static void AgregarPago(Membresias membresia)
+    public static void AgregarPago(Membresia membresia)
     {
         Pagos pago = GestorPagos.Instancia.CrearPago(membresia); Logger.Instancia.RegistrarEvento($"NUEVO PAGO. ID: {pago.ID}.");
     }
@@ -59,7 +59,7 @@ public static class Gestor
 
 
     // OPCION 6
-    public static List<Membresias> MembresiasActivas()
+    public static List<Membresia> MembresiasActivas()
     {
         return GestorMembresia.Instancia.MembresiasActivas();
     }

@@ -1,6 +1,4 @@
-﻿using FitLab.Core.Entidades; // Para usar Membresias y Cliente
-
-namespace FitLab.Core.Interfaces;
+﻿namespace FitLab.Core.Interfaces;
 public interface IIdentificador{
     int ID { get; }//Un atributo ID con al menos un get publico
 }
@@ -8,9 +6,4 @@ public interface IIdentificador{
 public interface IMostrar_datos
 {
     void Mostrar_datos();
-}
-
-    
-public interface IMembresiaFactory{ 
-    public Membresias CrearMembresia(Cliente cliente); 
 }
