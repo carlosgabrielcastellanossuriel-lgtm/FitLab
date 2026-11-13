@@ -3,7 +3,7 @@
 internal class GestorPagos
 {
     private static GestorPagos _instancia;
-    private List<Pagos> _listaPagos = new List<Pagos>();
+    private List<Pago> _listaPagos = new List<Pago>();
 
     private GestorPagos() { }
 
@@ -20,23 +20,23 @@ internal class GestorPagos
     // METOODOS
     //*********
 
-    public Pagos CrearPago(Membresia membresia)
+    public Pago CrearPago(Membresia membresia)
     {
-        Pagos pago = new Pagos(membresia);
+        Pago pago = new Pago(membresia);
 
         _listaPagos.Add(pago);
 
         return pago;
     }
 
-    public List<Pagos> HistorialPagos()
+    public List<Pago> HistorialPagos()
     {
-        return new List<Pagos>(_listaPagos);
+        return new List<Pago>(_listaPagos);
     }
 
-    public double Ingresos_mes(int anio, int mes)
+    public decimal Ingresos_mes(int anio, int mes)
     {
-        double ingresos_mes = _listaPagos.Where(p => p.Fecha.Month == mes && p.Fecha.Year == anio).Sum(p => p.monto_pagado);// Sumamos el campo monto_pagado de esos objetos pagos. Si no encuentra nada devuelve 0
+        decimal ingresos_mes = _listaPagos.Where(p => p.Fecha.Month == mes && p.Fecha.Year == anio).Sum(p => p.monto_pagado);// Sumamos el campo monto_pagado de esos objetos pagos. Si no encuentra nada devuelve 0
 
         return ingresos_mes;
     }

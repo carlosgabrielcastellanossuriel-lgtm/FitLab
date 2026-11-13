@@ -14,16 +14,16 @@ public class Cliente : IIdentificador, IMostrar_datos
     public int ID { get; private set; }
 
     // El descuento ya no se guarda: se calcula según el tipo del cliente
-    public double descuento
+    public decimal descuento
     {
         get
         {
             switch (Tipo)
             {
-                case TipoCliente.Regular: return 0;
-                case TipoCliente.Estudiante: return 0.15;
-                case TipoCliente.Premium: return -0.25;
-                default: return 0;
+                case TipoCliente.Regular: return 0m;
+                case TipoCliente.Estudiante: return 0.15m;
+                case TipoCliente.Premium: return -0.25m;
+                default: return 0m;
             }
         }
     }

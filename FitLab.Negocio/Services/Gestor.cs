@@ -27,7 +27,7 @@ public static class Gestor
 
     public static void AgregarPago(Membresia membresia)
     {
-        Pagos pago = GestorPagos.Instancia.CrearPago(membresia); Logger.Instancia.RegistrarEvento($"NUEVO PAGO. ID: {pago.ID}.");
+        Pago pago = GestorPagos.Instancia.CrearPago(membresia); Logger.Instancia.RegistrarEvento($"NUEVO PAGO. ID: {pago.ID}.");
     }
 
     // OPCION 3
@@ -103,7 +103,7 @@ public static class Gestor
     }
 
     // OPCION 11
-    public static double Ingresos_mes(int anio, int mes)
+    public static decimal Ingresos_mes(int anio, int mes)
     {
         return GestorPagos.Instancia.Ingresos_mes(anio, mes);
     }

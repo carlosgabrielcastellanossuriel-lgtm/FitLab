@@ -15,18 +15,18 @@ public class Membresia : IIdentificador, IMostrar_datos
     public TipoMembresia Tipo { get; }
 
     // La tarifa depende del tipo de membresía y del descuento del propietario
-    public double tarifa
+    public decimal tarifa
     {
         get
         {
-            double tarifa_base;
+            decimal tarifa_base;
 
             switch (Tipo)
             {
-                case TipoMembresia.Mensual: tarifa_base = 1500; break;
-                case TipoMembresia.Trimestral: tarifa_base = 4000; break;
-                case TipoMembresia.Anual: tarifa_base = 14000; break;
-                default: tarifa_base = 0; break;
+                case TipoMembresia.Mensual: tarifa_base = 1500m; break;
+                case TipoMembresia.Trimestral: tarifa_base = 4000m; break;
+                case TipoMembresia.Anual: tarifa_base = 14000m; break;
+                default: tarifa_base = 0m; break;
             }
 
             return tarifa_base - (tarifa_base * descuento);
@@ -40,7 +40,7 @@ public class Membresia : IIdentificador, IMostrar_datos
     public DateTime fecha_inicio { get; private set;}
     public DateTime fecha_creacion { get; private set; }
     public Estado_membresia Estado { get; private set; }
-    public double descuento { get; private set;}
+    public decimal descuento { get; private set;}
     public Cliente Propietario { get; private set; }
 
     //**************

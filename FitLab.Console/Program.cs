@@ -218,7 +218,7 @@ do
 
                     Console.WriteLine("Digite el mes buscado: "); int mes = Convert.ToInt32(Console.ReadLine());
 
-                    double ingresos = Gestor.Ingresos_mes(anio, mes); 
+                    decimal ingresos = Gestor.Ingresos_mes(anio, mes); 
 
                     Console.WriteLine($"Ingresos: ${ingresos}"); break;
                 }
