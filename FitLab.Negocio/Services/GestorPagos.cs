@@ -1,4 +1,4 @@
-﻿namespace Proyecto_FITLAB.Services;
+﻿namespace FitLab.Negocio;
 
 internal class GestorPagos
 {

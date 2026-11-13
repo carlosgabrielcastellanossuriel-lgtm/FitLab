@@ -1,4 +1,5 @@
 <Solution>
 <Project Path="FitLab.Console/Proyecto FITLAB.csproj" />
 <Project Path="FitLab.Core/FitLab.Core.csproj" />
+<Project Path="FitLab.Negocio/FitLab.Negocio.csproj" />
 </Solution>

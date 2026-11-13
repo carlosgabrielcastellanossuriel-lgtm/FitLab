@@ -1,4 +1,4 @@
-﻿namespace Proyecto_FITLAB;
+﻿namespace FitLab.Negocio;
 
 internal class MembresiaTrimestralFactory : IMembresiaFactory
 {

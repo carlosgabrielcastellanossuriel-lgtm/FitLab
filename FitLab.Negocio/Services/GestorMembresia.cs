@@ -1,6 +1,5 @@
-﻿using Proyecto_FITLAB.Patterns;
-
-namespace Proyecto_FITLAB; // [ai-assisted]
+﻿
+namespace FitLab.Negocio; // [ai-assisted]
 
 internal class GestorMembresia 
 {

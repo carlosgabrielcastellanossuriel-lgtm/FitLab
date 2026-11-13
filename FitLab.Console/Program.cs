@@ -1,6 +1,4 @@
-﻿using Proyecto_FITLAB;
-
-int opc = 0;
+﻿int opc = 0;
 
 Console.WriteLine("============ BIENVENIDO A FITLAB ============");
 do

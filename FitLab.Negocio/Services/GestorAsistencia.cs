@@ -1,4 +1,4 @@
-﻿namespace Proyecto_FITLAB; // [ai-assisted]
+﻿namespace FitLab.Negocio; // [ai-assisted]
 public class GestorAsistencia
 {
     private static GestorAsistencia _instancia;

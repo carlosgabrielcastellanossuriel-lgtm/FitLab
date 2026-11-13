@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FitLab.Core\FitLab.Core.csproj" />
+    <ProjectReference Include="..\FitLab.Negocio\FitLab.Negocio.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

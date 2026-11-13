@@ -1,4 +1,4 @@
-﻿namespace Proyecto_FITLAB.Patterns;
+﻿namespace FitLab.Negocio;
 
 internal static class MembresiasFactory 
 {

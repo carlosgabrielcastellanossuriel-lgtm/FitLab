@@ -1,6 +1,5 @@
-﻿using Proyecto_FITLAB.Services;
-
-namespace Proyecto_FITLAB; // [ai-assisted]
+﻿
+namespace FitLab.Negocio; // [ai-assisted]
 
 // Para explorar diferentes opciones y definiciones de terminos utilice la IA en esta clase.
 public static class Gestor 

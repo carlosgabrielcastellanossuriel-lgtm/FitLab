@@ -1,4 +1,4 @@
-﻿namespace Proyecto_FITLAB; // Aca aplicamos factory simple, para centralizar los new y usar el polimorfismo
+﻿namespace FitLab.Negocio; // Aca aplicamos factory simple, para centralizar los new y usar el polimorfismo
 internal static class ClientesFactory
 {
     public static Clientes CrearClientes(TipoClientes tipo, string nombre, Rol rol, int edad)
